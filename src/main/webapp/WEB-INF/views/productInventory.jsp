@@ -6,9 +6,9 @@ xmlns:spring="http://www.springframework.org/tags
 <div class="container marketing">
 
 
-    <h1>All Job Offers</h1>
+    <h1>Product Inventory Page</h1>
 
-    <p>Chceckout all jobs aviable now!</p>
+    <p>This is product inventory page</p>
 
 
     <table class="table table-striped table-hover">
@@ -33,6 +33,8 @@ xmlns:spring="http://www.springframework.org/tags
             </tr>
         </c:forEach>
     </table>
+
+    <a href="<spring:url value="/admin/productInventory/addProduct"/>" class="btn btn-primary">Add Product</a>
 
 
     <%@include file="/WEB-INF/views/template/footer.jsp" %>

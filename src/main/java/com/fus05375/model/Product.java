@@ -1,25 +1,31 @@
 package com.fus05375.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Product {
 
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String jobId;
     private String jobName;
     private String jobCategory;
     private String jobDescription;
     private double jobSalary;
-    private String jobCondition;
     private String jobStatus;
-    private String jobManufacturer;
-    private double noOfCandidates;
+    private String jobEmployer;
 
-
-    public double getNoOfCandidates() {
-        return noOfCandidates;
+    public String getJobId() {
+        return jobId;
     }
 
-    public void setNoOfCandidates(double noOfCandidates) {
-        this.noOfCandidates = noOfCandidates;
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
     }
-
 
 
     public String getJobName() {
@@ -54,14 +60,6 @@ public class Product {
         this.jobSalary = jobSalary;
     }
 
-    public String getJobCondition() {
-        return jobCondition;
-    }
-
-    public void setJobCondition(String jobCondition) {
-        this.jobCondition = jobCondition;
-    }
-
     public String getJobStatus() {
         return jobStatus;
     }
@@ -70,11 +68,11 @@ public class Product {
         this.jobStatus = jobStatus;
     }
 
-    public String getJobManufacturer() {
-        return jobManufacturer;
+    public String getJobEmployer() {
+        return jobEmployer;
     }
 
-    public void setJobManufacturer(String jobManufacturer) {
-        this.jobManufacturer = jobManufacturer;
+    public void setJobEmployer(String jobEmployer) {
+        this.jobEmployer = jobEmployer;
     }
 }
