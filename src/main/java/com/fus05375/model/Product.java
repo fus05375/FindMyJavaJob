@@ -1,9 +1,10 @@
 package com.fus05375.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Product {
@@ -11,68 +12,77 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String jobId;
-    private String jobName;
-    private String jobCategory;
-    private String jobDescription;
-    private double jobSalary;
-    private String jobStatus;
-    private String jobEmployer;
+    private String productID;
 
-    public String getJobId() {
-        return jobId;
+    @NotEmpty(message = " Name must not be null.")
+    public String productName;
+    private String productCategory;
+    private String productDescription;
+    @Min(value = 0,message = " Price must be more than zero.")
+    private double productPrice;
+    private String productStatus;
+
+    private String productManufacturer;
+
+    public MultipartFile getProductImage() {
+        return productImage;
     }
 
-    public void setJobId(String jobId) {
-        this.jobId = jobId;
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
+
+    @Transient
+    private MultipartFile productImage; //a representation of an uploaded file received in a multipart request
+
+
+
+    //Getters and setters
+    public String getProductID() {
+        return productID;
+    }
+    public void setProductID(String productID) {
+        this.productID = productID;
+    }
+    public String getProductName() {
+        return productName;
+    }
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+    public String getProductCategory() {
+        return productCategory;
+    }
+    public void setProductCategory(String productCategory) {
+        this.productCategory = productCategory;
+    }
+    public String getProductDescription() {
+        return productDescription;
+    }
+    public void setProductDescription(String productDescription) {
+        this.productDescription = productDescription;
+    }
+    public double getProductPrice() {
+        return productPrice;
+    }
+    public void setProductPrice(double productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public String getProductStatus() {
+        return productStatus;
+    }
+    public void setProductStatus(String productStatus) {
+        this.productStatus = productStatus;
     }
 
 
-    public String getJobName() {
-        return jobName;
+    public String getProductManufacturer() {
+        return productManufacturer;
+    }
+    public void setProductManufacturer(String productManufacturer) {
+        this.productManufacturer = productManufacturer;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
-    }
 
-    public String getJobCategory() {
-        return jobCategory;
-    }
-
-    public void setJobCategory(String jobCategory) {
-        this.jobCategory = jobCategory;
-    }
-
-    public String getJobDescription() {
-        return jobDescription;
-    }
-
-    public void setJobDescription(String jobDescription) {
-        this.jobDescription = jobDescription;
-    }
-
-    public double getJobSalary() {
-        return jobSalary;
-    }
-
-    public void setJobSalary(double jobSalary) {
-        this.jobSalary = jobSalary;
-    }
-
-    public String getJobStatus() {
-        return jobStatus;
-    }
-
-    public void setJobStatus(String jobStatus) {
-        this.jobStatus = jobStatus;
-    }
-
-    public String getJobEmployer() {
-        return jobEmployer;
-    }
-
-    public void setJobEmployer(String jobEmployer) {
-        this.jobEmployer = jobEmployer;
-    }
 }

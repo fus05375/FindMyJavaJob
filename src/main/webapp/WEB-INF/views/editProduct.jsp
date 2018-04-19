@@ -7,16 +7,18 @@
 <div class="container marketing">
 
 
-    <h1>Add Product</h1>
-    <p class="lead">Fill the below information to add a product:</p>
+    <h1>Edit Product</h1>
+    <p class="lead">Fill the below information to edit a product:</p>
 
 
-    <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post"
+    <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct" method="post"
                commandName="product" enctype="multipart/form-data">
 
+        <form:hidden path="productID" value="${product.productID}"/>
+
         <div class="form-group">
-            <label for="name"><b>Name</b></label><form:errors path="productName"  cssStyle="color: #ff0000" />
-            <form:input path="productName" id="name" class="form-Control"/>
+            <label for="name"><b>Name</b></label>
+            <form:input path="productName" id="name" class="form-Control" value="${product.productName}"/>
         </div>
 
 
@@ -32,12 +34,14 @@
 
         <div class="form-group">
             <label for="description"><b>Description</b></label>
-            <form:textarea path="productDescription" id="description" class="form-Control"/>
+            <form:textarea path="productDescription" id="description" class="form-Control"
+                           value="${product.productDescription}"/>
         </div>
 
         <div class="form-group">
-            <label for="price"><b>Price</b></label><form:errors path="productPrice"  cssStyle="color: #ff0000" />
-            <form:input path="productPrice" id="price" class="form-Control"/>
+            <label for="price"><b>Price</b></label>
+            <form:errors path="productPrice" cssStyle="color: #ff0000"/>
+            <form:input path="productPrice" id="price" class="form-Control" value="${product.productPrice}"/>
         </div>
 
 
@@ -52,11 +56,12 @@
 
         <div class="form-group">
             <label for="manufacturer"><b>Manufacturer</b></label>
-            <form:input path="productManufacturer" id="manufacturer" class="form-Control"/>
+            <form:input path="productManufacturer" id="manufacturer" class="form-Control"
+                        value="${product.productManufacturer}"/>
         </div>
 
         <div class="form-group">
-             <label class="custom-control-label" for="productImage"><b>Upload Course Image</b></label>
+            <label class="custom-control-label" for="productImage"><b>Upload Course Image</b></label>
             <form:input path="productImage" id="productImage" type="file" class="form:input-large"/>
 
         </div>

@@ -4,27 +4,28 @@
 <div class="container marketing">
 
 
-    <h1>Job Detail</h1>
+    <h1>Product Detail</h1>
 
 
 </div>
 <div class="container">
     <div class="row">
         <div class="col-md-5">
+            <img src="<c:url value="/resources/images/${product.productID}.png" />" alt="image" style="width: 100%"/>
         </div>
 
         <div class="col-md-5">
-            <h3>${product.jobName}</h3>
-            <p>${product.jobDescription}</p>
+            <h3>${product.productName}</h3>
+            <p>${product.productDescription}</p>
 
             <p>
-                <strong>Company name</strong>: ${product.jobEmployer}
+                <strong>CManufacturer</strong>: ${product.productManufacturer}
             </p>
             <p>
-                <strong>Category</strong>: ${product.jobCategory}
+                <strong>Category</strong>: ${product.productCategory}
             </p>
 
-            <h4>${product.jobSalary} PLN</h4>
+            <h4>${product.productPrice} PLN</h4>
         </div>
     </div>
 </div>

@@ -15,13 +15,14 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Carousel Template for Bootstrap</title>
+    <title>FindMyJavaJob</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="<c:url value="/resources/css/carousel.css"/>" rel="stylesheet">
+
 </head>
 <body>
 
@@ -38,12 +39,13 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/productList"/> ">Job advertisements</a>
+                    <a class="nav-link" href="<c:url value="/productList"/> ">Product List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="<c:url value="/login" />">Admin</a>
                 </li>
             </ul>
+
             <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -63,7 +65,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img class="first-slide"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                     src="<c:url value="/resources/images/background1.jpg" />"
                      alt="First slide">
                 <div class="container">
                     <div class="carousel-caption text-left">
@@ -76,7 +78,7 @@
             </div>
             <div class="carousel-item">
                 <img class="second-slide"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+    src="<c:url value="/resources/images/background2.jpg" />"
                      alt="Second slide">
                 <div class="container">
                     <div class="carousel-caption">
@@ -89,7 +91,7 @@
             </div>
             <div class="carousel-item">
                 <img class="third-slide"
-                     src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
+                     src="<c:url value="/resources/images/background3.jpg" />"
                      alt="Third slide">
                 <div class="container">
                     <div class="carousel-caption text-right">
@@ -158,15 +160,16 @@
             <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
+    </div>
 </main>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"><\/script>')</script>
-<script src="<c:url value="/resources/js/jquery-3.3.1.min.js"/>"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="<c:url value="/resources/js/jquery-3.1.1.min.js" />"><\/script>')</script>
+<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+
 </body>
 </html>
